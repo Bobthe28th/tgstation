@@ -68,14 +68,11 @@
 	ADD_TRAIT(src, TRAIT_NOFIRE_SPREAD, ROUNDSTART_TRAIT)
 
 	ADD_TRAIT(src, TRAIT_ASHSTORM_IMMUNE, ROUNDSTART_TRAIT)
-<<<<<<< HEAD
 	ADD_TRAIT(src, TRAIT_LITERATE, ROUNDSTART_TRAIT)
 	if(speaker_seed)
 		AddElement(/datum/element/tts_speaker, speaker_seed)
-=======
 	ADD_TRAIT(src, TRAIT_MADNESS_IMMUNE, ROUNDSTART_TRAIT)
 	ADD_TRAIT(src, TRAIT_MARTIAL_ARTS_IMMUNE, ROUNDSTART_TRAIT)
->>>>>>> 74b53249bee54ec86ed01297efcfb0fde51068b9
 
 /mob/living/silicon/Destroy()
 	QDEL_NULL(radio)
