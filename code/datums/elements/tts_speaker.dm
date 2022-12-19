@@ -4,8 +4,8 @@
  * Used for things that need to speak that aren't human!
  */
 /datum/element/tts_speaker
-	element_flags = ELEMENT_BESPOKE|ELEMENT_DETACH
-	id_arg_index = 2
+	element_flags = ELEMENT_BESPOKE
+	argument_hash_start_idx = 2
 	///What seed this mob talks in
 	var/voice_seed
 
