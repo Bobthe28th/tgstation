@@ -70,7 +70,7 @@
 	name = "Visit by Santa"
 	holidayID = CHRISTMAS
 	typepath = /datum/round_event/santa
-	weight = 20
+	weight = 0
 	max_occurrences = 1
 	earliest_start = 30 MINUTES
 	category = EVENT_CATEGORY_HOLIDAY
@@ -83,11 +83,21 @@
 	priority_announce("Santa is coming to town!", "Unknown Transmission")
 
 /datum/round_event/santa/start()
-	var/list/candidates = poll_ghost_candidates("Santa is coming to town! Do you want to be Santa?", poll_time=150)
-	if(LAZYLEN(candidates))
-		var/mob/dead/observer/C = pick(candidates)
-		santa = new /mob/living/carbon/human(pick(GLOB.blobstart))
-		santa.key = C.key
+	var/santaFound = FALSE
+	for(var/client/client in GLOB.clients)
+		if(client.key == "Aidan" && isobserver(client.mob))
+			santaFound = TRUE
+			santa = new /mob/living/carbon/human(pick(GLOB.blobstart))
+			santa.key = client.key
 
-		var/datum/antagonist/santa/A = new
-		santa.mind.add_antag_datum(A)
+			var/datum/antagonist/santa/A = new
+			santa.mind.add_antag_datum(A)
+	if (!santaFound)
+		var/list/candidates = poll_ghost_candidates("Santa is coming to town! Do you want to be Santa?", poll_time=150)
+		if(LAZYLEN(candidates))
+			var/mob/dead/observer/C = pick(candidates)
+			santa = new /mob/living/carbon/human(pick(GLOB.blobstart))
+			santa.key = C.key
+
+			var/datum/antagonist/santa/A = new
+			santa.mind.add_antag_datum(A)

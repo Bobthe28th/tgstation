@@ -611,38 +611,38 @@
 /datum/holiday/festive_season/greet()
 	return "Have a nice festive season!"
 
-/datum/holiday/human_rights
-	name = "Human-Rights Day"
-	begin_day = 10
-	begin_month = DECEMBER
+// /datum/holiday/human_rights
+// 	name = "Human-Rights Day"
+// 	begin_day = 10
+// 	begin_month = DECEMBER
 
-/datum/holiday/monkey
-	name = MONKEYDAY
-	begin_day = 14
-	begin_month = DECEMBER
-	drone_hat = /obj/item/clothing/mask/gas/monkeymask
+// /datum/holiday/monkey
+// 	name = MONKEYDAY
+// 	begin_day = 14
+// 	begin_month = DECEMBER
+// 	drone_hat = /obj/item/clothing/mask/gas/monkeymask
 
-/datum/holiday/doomsday
-	name = "Mayan Doomsday Anniversary"
-	begin_day = 21
-	begin_month = DECEMBER
-	drone_hat = /obj/item/clothing/mask/animal/small/tribal
+// /datum/holiday/doomsday
+// 	name = "Mayan Doomsday Anniversary"
+// 	begin_day = 21
+// 	begin_month = DECEMBER
+// 	drone_hat = /obj/item/clothing/mask/animal/small/tribal
 
 /datum/holiday/xmas
 	name = CHRISTMAS
-	begin_day = 23
+	begin_day = 1
 	begin_month = DECEMBER
-	end_day = 27
+	end_day = 31
 	drone_hat = /obj/item/clothing/head/costume/santa
 	mail_holiday = TRUE
 
 /datum/holiday/xmas/greet()
 	return "Have a merry Christmas!"
 
-/datum/holiday/boxing
-	name = "Boxing Day"
-	begin_day = 26
-	begin_month = DECEMBER
+// /datum/holiday/boxing
+// 	name = "Boxing Day"
+// 	begin_day = 26
+// 	begin_month = DECEMBER
 
 /datum/holiday/new_year
 	name = NEW_YEAR
