@@ -85,7 +85,7 @@
 /datum/round_event/santa/start()
 	var/santaFound = FALSE
 	for(var/client/client in GLOB.clients)
-		if(client.key == "Aidan" && isobserver(client.mob))
+		if(client.key == "GRAWARRGGRGGRGRGARGG" && isobserver(client.mob))
 			santaFound = TRUE
 			santa = new /mob/living/carbon/human(pick(GLOB.blobstart))
 			santa.key = client.key
