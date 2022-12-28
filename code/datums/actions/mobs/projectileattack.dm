@@ -198,6 +198,11 @@
 	SLEEP_CHECK_DEATH(1.5 SECONDS, owner)
 	return ..()
 
+/datum/action/cooldown/mob_cooldown/projectile_attack/shotgun_blast/krampus
+	cooldown_time = 2 SECONDS
+	projectile_type = /obj/projectile/krampus/coal
+	projectile_sound = 'sound/effects/bamf.ogg'
+
 /datum/action/cooldown/mob_cooldown/projectile_attack/shotgun_blast/pattern
 	name = "Alternating Shotgun Fire"
 	desc = "Fires projectiles in an alternating shotgun pattern."
