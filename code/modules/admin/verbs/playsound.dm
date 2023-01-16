@@ -70,11 +70,11 @@
 	SEND_SOUND(M, S)
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Play Direct Mob Sound") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
-/client/proc/play_web_sound()
-	set category = "Admin.Fun"
+/client/verb/play_web_sound()
+	set category = "OOC"
 	set name = "Play Internet Sound"
-	if(!check_rights(R_SOUND))
-		return
+	// if(!check_rights(R_SOUND))
+	//	return
 
 	var/ytdl = CONFIG_GET(string/invoke_youtubedl)
 	if(!ytdl)
@@ -117,13 +117,18 @@
 					music_extra_data["end"] = data["end_time"]
 					music_extra_data["link"] = data["webpage_url"]
 
-					var/res = tgui_alert(usr, "Show the title of and link to this song to the players?\n[title]",, list("No", "Yes", "Cancel"))
-					switch(res)
-						if("Yes")
-							music_extra_data["title"] = data["title"]
-							to_chat(world, span_boldannounce("An admin played: [webpage_url]"), confidential = TRUE)
-						if("Cancel")
-							return
+					// var/res = tgui_alert(usr, "Show the title of and link to this song to the players?\n[title]",, list("No", "Yes", "Cancel"))
+					// switch(res)
+					//	if("Yes")
+					//		music_extra_data["title"] = data["title"]
+					//		to_chat(world, span_boldannounce("An admin played: [webpage_url]"), confidential = TRUE)
+					//	if("Cancel")
+					//		return
+					var/res = tgui_alert(usr, "Play sound:\n[title]",, list("Yes", "No"))
+					if (res == "No")
+						return
+					music_extra_data["title"] = data["title"]
+					to_chat(world, span_boldannounce("[src.key] played: [webpage_url]"), confidential = TRUE)
 
 					SSblackbox.record_feedback("nested tally", "played_url", 1, list("[ckey]", "[web_sound_input]"))
 					log_admin("[key_name(src)] played web sound: [web_sound_input]")
