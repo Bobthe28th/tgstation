@@ -260,8 +260,8 @@ GLOBAL_PROTECT(admin_verbs_poll)
 			add_verb(src, GLOB.admin_verbs_poll)
 		if(rights & R_SOUND)
 			add_verb(src, GLOB.admin_verbs_sounds)
-			if(CONFIG_GET(string/invoke_youtubedl))
-				add_verb(src, /client/proc/play_web_sound)
+		//	if(CONFIG_GET(string/invoke_youtubedl))
+		//		add_verb(src, /client/proc/play_web_sound)
 		if(rights & R_SPAWN)
 			add_verb(src, GLOB.admin_verbs_spawn)
 
@@ -279,7 +279,7 @@ GLOBAL_PROTECT(admin_verbs_poll)
 		/client/proc/stealth,
 		GLOB.admin_verbs_poll,
 		GLOB.admin_verbs_sounds,
-		/client/proc/play_web_sound,
+		// /client/proc/play_web_sound,
 		GLOB.admin_verbs_spawn,
 		/*Debug verbs added by "show debug verbs"*/
 		GLOB.admin_verbs_debug_mapping,
