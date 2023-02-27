@@ -977,8 +977,8 @@ GLOBAL_PROTECT(admin_verbs_poll)
 			real_reqs += "Must have a mind"
 		if(reqs & SPELL_REQUIRES_NO_ANTIMAGIC)
 			real_reqs += "Must have no antimagic"
-		if(reqs & SPELL_REQUIRES_OFF_CENTCOM)
-			real_reqs += "Must be off central command z-level"
+		if(reqs & SPELL_REQUIRES_STATION)
+			real_reqs += "Must be on the station z-level"
 		if(reqs & SPELL_REQUIRES_WIZARD_GARB)
 			real_reqs += "Must have wizard clothes"
 
@@ -994,10 +994,6 @@ GLOBAL_PROTECT(admin_verbs_poll)
 	set name = "Load/Jump Lazy Template"
 	set category = "Admin.Events"
 	if(!check_rights(R_ADMIN))
-		return
-
-	if(SSticker.current_state != GAME_STATE_PLAYING)
-		to_chat(usr, span_warning("The game hasnt started yet!"))
 		return
 
 	var/list/choices = LAZY_TEMPLATE_KEY_LIST_ALL()
